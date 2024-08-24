@@ -1,5 +1,5 @@
 # Stage 1: Build the Maven project
-FROM maven:3.6.3-openjdk-11 AS build
+# FROM maven:3.6.3-openjdk-11 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -9,10 +9,10 @@ COPY pom.xml .
 COPY src /app/src
 
 # Download dependencies and build the project
-RUN mvn clean package -DskipTests
+# RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final image
-FROM openjdk:11-jre-slim
+# FROM openjdk:11-jre-slim
 
 # Set the working directory
 WORKDIR /app
