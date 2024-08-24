@@ -18,10 +18,10 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/your-application.jar /app/your-application.jar
+COPY --from=build /app/target/basic-webapp.war /app/target/basic-webapp.war
 
 # Expose the port on which the app will run
 EXPOSE 8080
 
 # Command to run the JAR file
-ENTRYPOINT ["java", "-jar", "/app/your-application.jar"]
+ENTRYPOINT ["java", "-jar", "/app/target/basic-webapp.war"]
